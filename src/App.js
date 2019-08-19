@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {view} from 'react-easy-state';
 
-function App() {
+import Form from './components/Form';
+import ListRepo from './components/ListRepo';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='apiapp'>
+      <header className='header'>
+        <h1>User Repo</h1>
+        <div className='section'>
+          <span className='app-section'>Sections:</span>
+          <div className='filters'>
+            <button className='selected'>
+              Search User
+            </button>
+            <button className=''>
+              Search Repo
+            </button>
+          </div>
+        </div>
+        <Form/>
+      </header>      
+      <ListRepo/>
     </div>
   );
 }
 
-export default App;
+export default view(App);
